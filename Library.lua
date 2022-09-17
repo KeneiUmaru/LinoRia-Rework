@@ -10,8 +10,10 @@ local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
 local ScreenGui = Instance.new('ScreenGui');
 ProtectGui(ScreenGui);
-
+do local ui = game:GetService("CoreGui"):FindFirstChild("Linoria")  if ui then ui:Destroy() end end
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
+
+ScreenGui.Name = "Linoria"
 ScreenGui.Parent = CoreGui;
 
 local Toggles = {};
@@ -2541,4 +2543,4 @@ function Library:CreateWindow(WindowTitle)
     return Window;
 end;
 
-return Library;
+return Library
